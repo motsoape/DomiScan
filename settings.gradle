@@ -1,1 +1,1 @@
-include ':app', ':Domiscan.Data', ':domiscan.data', ':DomiScan.Common'
+include ':app', ':DomiScan.Data', ':DomiScan.Data', ':DomiScan.Common'
