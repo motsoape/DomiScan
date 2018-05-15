@@ -7,11 +7,14 @@
     android:background="@drawable/border_swipe"
     >
 
-    <ImageView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:id="@+id/imageView" />
+   <android.support.design.widget.TextInputEditText
+       android:id="@+id/results"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="8dp"
+       android:layout_gravity="center"
+       android:text="Hello World"
+       />
+
 
 </LinearLayout>

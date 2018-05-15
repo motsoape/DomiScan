@@ -1,6 +1,7 @@
 package com.dominantit.domiscan.Scan;
 
 import android.content.Context;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -9,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.dominantit.domiscan.R;
+import com.dominantit.domiscan.Shared.DataArchive;
+
+import org.w3c.dom.Text;
 
 public class ViewPagerAdapter extends PagerAdapter {
 
@@ -22,7 +26,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return images.length;
+        return 2;
     }
 
     @Override
@@ -34,13 +38,25 @@ public class ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, final int position) {
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.custom_layout, null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        imageView.setImageResource(images[position]);
 
-        ViewPager vp = (ViewPager) container;
-        vp.addView(view, 0);
-        return view;
+        if(position == 1)
+        {
+            View view = layoutInflater.inflate(R.layout.textedit_layout, null);
+            TextInputEditText extractedBox = view.findViewById(R.id.results);
+            extractedBox.setText("Watch the space");
+            ViewPager vp = (ViewPager) container;
+            vp.addView(view, 0);
+            return view;
+        }
+        else
+        {
+            View view = layoutInflater.inflate(R.layout.custom_layout, null);
+            ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+            imageView.setImageResource(images[position]);
+            ViewPager vp = (ViewPager) container;
+            vp.addView(view, 0);
+            return view;
+        }
 
     }
 

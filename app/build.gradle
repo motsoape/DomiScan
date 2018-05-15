@@ -45,4 +45,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:15.0.0'
     implementation project(':DomiScan.Common')
     implementation project(':DomiScan.Data')
+    implementation 'com.google.android.gms:play-services-vision:15.0.2'
 }
